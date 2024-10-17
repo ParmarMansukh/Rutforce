@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rutforce Oil</title>
+  <link rel="stylesheet" href="style1.css">
+
+  <style>
+
+
+@import url();
+  *{
+               
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'poppins',sans-serif;
+  }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  /* background-color: #f2f2f2; */
+  background: #f4f4f4;  
+ 
+
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+
+.image-modal
+  {
+      position: relative;
+      width: 380px;
+      height: 420px;
+      background-color: #1c1c1c;
+      border-radius: 8px;
+   overflow: hidden;
+
+  }  
+  .box
+  {
+      position: relative;
+      width: 380px;
+      height: 420px;
+      background-color: #1c1c1c;
+      border-radius: 8px;
+   overflow: hidden;
+
+  }  
+   
+  .box::before{
+
+    content: '' ;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+  }
+  .box::after{
+
+content: '' ;
+position: absolute;
+top: -50%;
+left: -50%;
+width: 380px;
+height: 420px;
+background: linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+z-index: 1;
+transform-origin: bottom right;
+animation: animate 6s linear infinite;
+animation-delay: -3s;
+}
+
+   
+  .image-modal::before{
+
+    content: '' ;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,#ff2982,#45f3ff);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+  }
+  .image-modal::after{
+
+content: '' ;
+position: absolute;
+top: -50%;
+left: -50%;
+width: 380px;
+height: 420px;
+background: linear-gradient(0deg,transparent,transparent,#fa0101,#44d6d6);
+z-index: 1;
+transform-origin: bottom right;
+animation: animate 6s linear infinite;
+animation-delay: -3s;
+}
+
+.borderline{
+
+    position: absolute;
+    top: 0;
+    inset: 0;
+
+}
+
+
+  .borderline::before{
+    content: '' ;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,#f70857,#3aff3a);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+
+}
+.borderline::after{
+    content: '' ;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,#07eeff,#ff0404);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+
+}
+  @keyframes animate{
+    0%
+    {
+        transform: rotate(0deg);
+
+    }
+
+    100% {
+        transform: rotate(360deg);
+
+
+    }}
+
+.image-modal {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  /* box-shadow: 0 0 7px 7px rgb(37, 230, 11); */
+  box-shadow:  0 0 30px rgba(0, 55, 255, 0.916);
+        
+        
+          /* margin: 2px; */
+          border: 2px solid gold;
+           border-top: 2px solid rgb(14, 195, 236);
+         border-bottom: 2px solid rgb(231, 5, 5);
+         border-left: 2px solid rgb(234, 28, 217);
+         border-right: 2px solid rgb(1, 1, 1);
+         /* border: 2px; */
+
+  border-radius: 22px;
+
+}
+.image-modal:hover{
+  box-shadow:  0 0  10px 10px rgba(127, 241, 184, 0.916);
+        
+        
+        /* margin: 2px; */
+        border: 2px solid rgb(255, 5, 5);
+         border-top: 2px solid rgb(30, 245, 11);
+       border-bottom: 2px solid rgba(231, 216, 5, 0.89);
+       border-left: 2px solid rgb(250, 7, 129);
+       border-right: 2px solid rgb(1, 1, 1);
+}
+
+.image-modal img {
+  width: 100%;
+  height: 250px;
+  border-radius: 22px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+                   /* Thumbnails */
+.thumbnails {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.thumbnails img {
+  width: 130px;
+  height: 170px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 0 12px;
+
+
+}
+
+.thumbnails img:hover {
+  border-color: rgb(255, 104, 104);
+  border-radius: 5px;
+
+}
+
+      
+.products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .product {
+            border: 1px solid #aca9a9;
+            border-radius: 5px;
+            /* height: 300px; */
+            padding: 10px;
+            width: 160px;
+            height: 200px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin-left: 27px;
+            margin-top: 15px;
+
+        }
+
+        .product img {
+            width: 100%;
+            height: 170px;
+            border-radius: 5px;
+            /* margin-top: 12px; */
+
+
+        }
+
+        .product button {
+            padding: 10px;
+            background-color: #eea13d;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-bar {
+            display: inline-block;
+            /* margin-left: 20px; */
+    margin-left: 1%;
+
+        }
+
+        .search-bar input {
+            padding: 5px;
+            border-radius: 10px;
+    /* margin-right: 1%; */
+
+            
+        }
+
+        .search-bar button {
+            padding: 5px;
+            background-color: #ff5722;
+            width:78px;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+
+        /* modal style  */
+
+        :root {
+  --modal-duration: 1s;
+  --modal-color: #428bca;
+}
+
+
+        .button {
+  background: #000000;
+  padding: 1em 2em;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #3876ac;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  margin: 10% auto;
+  width: 60%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+.modal-header h2,
+.modal-footer h3 {
+  margin: 0;
+}
+
+.modal-header {
+  background: var(--modal-color);
+  padding: 15px;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.modal-body {
+  padding: 10px 20px;
+  background: #fff;
+}
+
+.modal-footer {
+  background: var(--modal-color);
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.close {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+a{
+    text-decoration: none;
+    color: white;
+
+}
+/* a:hover{
+	color: rgba(226, 2, 2, 0.897);
+    font-size: 22px;
+    
+} */
+
+footer {
+            background-color: #232f3e;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+.bl img{
+  width: 50%;
+  height: 20%;
+}
+        /* modal new add contect */
+
+      
+  </style>
+</head>
+<body>
+
+
+    
+  <!-- Navbar -->
+ 
+  <header>
+    <nav>
+        <ul>
+            <li><a href="#" id="homeLink"><m>H</m>ome</a></li>
+            <li><a href="#" id="aboutLink"><m>A</m>bout</a></li>
+            <li><a href="galary.html" id="galleryLink"><m>G</m>allery</a></li>
+            <li><a href="#" id="contactLink"><m>C</m>ontact</a></li>
+        </ul>
+    </nav>
+</header>
+  <!-- Main Section -->
+  
+  <section class="main-content">
+    <div class="image-modal">
+      
+      <!-- <div class="box"> 
+        <span class="borderline"> </span> -->
+
+      <img src="logoo.jpg" id="main-image" alt="Parmar" height="300">
+      <!-- Arrows for Navigation -->
+      <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+      <button class="next" onclick="changeImage(1)">&#10095;</button>
+    </div>    
+  </div>
+
+                        
+    <!-- Thumbnails -->
+    <div class="thumbnails">
+        <marquee behavior=" " direction="">
+      <img src="ru1.jpg" alt="Trecter" onclick="setImage('ru1.jpg')"> 
+      <!-- <h1>paramr</h1> -->
+      <img src="ru2.jpg" alt="Bike" onclick="setImage('ru2.jpg')">
+      <img src="ru3.jpg" alt="JCB" onclick="setImage('ru3.jpg')">
+      <img src="ru4.jpg" alt="Rikka" onclick="setImage('ru4.jpg')">
+      <img src="ru5.jpg" alt="Car" onclick="setImage('ru5.jpg')">
+      <img src="ru6.jpg" alt="Motet" onclick="setImage('ru6.jpg')">
+      <img src="ru7.jpg" alt="Motet" onclick="setImage('ru7.jpg')">
+      <img src="ru8.jpg" alt="Motet" onclick="setImage('ru8.jpg')">
+      <img src="ru9.jpg" alt="Motet" onclick="setImage('ru9.jpg')">
+      <img src="ru10.jpg" alt="Motet" onclick="setImage('ru10.jpg')">
+    </marquee>
+    </div>
+  </section>
+                         <!-- modal send styleshit -->
+
+<center>  
+  
+  <button id="modal-btn" class="button"> About</button>
+
+  <button id="modal-btn" class="button"> <a href="3D.html">3D Home</a> </button>
+  <button id="modal-btn" class="button"> <a href="login.html">3D MTP</a> </button>
+
+          </center>
+
+
+            <div id="my-modal" class="modal">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close">&times;</span>
+                  <h3> Rutforce OIL </h3>
+                  <div class="bl">
+
+                    <marquee behavior="" direction="">
+                   <img src="rutt2.jpg" alt="">
+                   <img src="rutt2.jpg" alt="">
+                 
+ 
+                 
+ 
+                 </marquee>
+ 
+                 </div>
+                </div>
+                <div class="modal-body">
+                  <div class="bl">
+
+                   <marquee behavior="" direction="">
+                  <img src="ru4.jpg" alt="">
+                  <img src="ru5.jpg" alt="">
+                  <img src="ru19.jpg" alt="">
+                 
+
+                
+
+                </marquee>
+
+                </div>
+          </div>
+                <div class="modal-footer">
+                  <a href="#">Back to  Home</a>
+                </div>
+              </div>
+            </div>
+          
+             
+          
+            <script>
+          
+          
+          // Get DOM Elements
+          const modal = document.querySelector('#my-modal');
+          const modalBtn = document.querySelector('#modal-btn');
+          const closeBtn = document.querySelector('.close');
+          
+          // Events
+          modalBtn.addEventListener('click', openModal);
+          closeBtn.addEventListener('click', closeModal);
+          window.addEventListener('click', outsideClick);
+          
+          // Open
+          function openModal() {
+            modal.style.display = 'block';
+          }
+          
+          // Close
+          function closeModal() {
+            modal.style.display = 'none';
+          }
+          
+          // Close If Outside Click
+          function outsideClick(e) {
+            if (e.target == modal) {
+              modal.style.display = 'none';
+            }
+          }
+          
+            </script>
+                         <!-- modal send styleshit -->
+
+
+<!-- <hr style="color:red"height="60%"> -->
+   
+  <secti class="products">
+    <!-- <marquee behavior="" direction="top">    -->
+    <article class="product">
+       
+        <img src="ru1.jpg" alt="Product 1">
+        <!-- <h3>Rutforce oil Bike</h3>
+        <p>₹300</p> -->
+        <!-- <button>Add to Cart</button> -->
+    </article>
+
+    
+    <article class="product">
+        <img src="ru2.jpg" alt="Product 5">
+        <!-- <h3>HP Laptop i3</h3>
+        <p>₹32279</p> -->
+        <!-- <button>Add to Cart</button> -->
+    </article>
+
+    <article class="product">
+        <img src="ru3.jpg" alt="Product 5">
+        <!-- <h3>HP new Modal i7</h3>
+        <p>₹59279</p> -->
+        
+    </article>
+
+    <article class="product">
+        <img src="ru4.jpg" alt="Product 5">
+        <!-- <h3>HP new Modal i7</h3>
+        <p>₹59279</p> -->
+        
+    </article> <article class="product">
+        <img src="ru5.jpg" alt="Product 5">
+        <!-- <h3>HP new Modal i7</h3>
+        <p>₹59279</p> -->
+        
+    </article>
+    <article class="product">
+        <img src="ru6.jpg" alt="Product 5">
+        <!-- <h3>HP new Modal i7</h3>
+        <p>₹59279</p> -->
+        
+    </article>
+
+    <article class="product">
+        <img src="ru7.jpg" alt="Product 5">
+        <!-- <h3>HP new Modal i7</h3>
+        <p>₹59279</p> -->
+        
+    </article>
+    <article class="product">
+        <img src="ru8.jpg" alt="Product 5">
+        <!-- <h3>HP new Modal i7</h3>
+        <p>₹59279</p> -->
+        
+    </article>
+    <article class="product">
+        <img src="ru9.jpg" alt="Product 5">
+        <!-- <h3>HP new Modal i7</h3>
+        <p>₹59279</p> -->
+        
+    </article>
+    <article class="product">
+        <img src="ru10.jpg" alt="Product 5">
+        <!-- <h3>HP new Modal i7</h3>
+        <p>₹59279</p> -->
+        
+    </article>
+
+</secti>
+
+
+
+  <!-- <footer>
+    <p>&copy; 2024 Rutforce Oil | Footer Position Fixed</p>
+  </footer> -->
+  
+
+  <script >
+
+
+
+let currentIndex = 0;
+const images = ['ru1.jpg', 'ru2.jpg', 'ru3.jpg', 'ru4.jpg', 'ru5.jpg', 'ru6.jpg', 'ru7.jpg'];
+
+function setImage(image) {
+  document.getElementById('main-image').src = image;
+}
+
+function changeImage(direction) {
+  currentIndex += direction;
+  if (currentIndex >= images.length) currentIndex = 0;
+  if (currentIndex < 0) currentIndex = images.length - 1;
+  document.getElementById('main-image').src = images[currentIndex];
+}
+
+  </script>
+
+<script>
+        
+        function filterProducts() {
+    const searchQuery = document.getElementById('search-input').value.toLowerCase();
+    const products = document.querySelectorAll('.product');
+
+    products.forEach(product => {
+        const productName = product.querySelector('h3').textContent.toLowerCase();
+        
+        // Check if the product name includes the search query
+        if (productName.includes(searchQuery)) {
+            product.style.display = ''; // Show product
+        } else {
+            product.style.display = 'none'; // Hide product
+        }
+    });
+}
+
+document.getElementById('search-input').addEventListener('input', debounce(filterProducts, 300));
+
+// Debounce function to limit the rate of filtering
+function debounce(func, delay) {
+    let timeout;
+    return function() {
+        const context = this, args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), delay);
+    };
+}
+
+</script>
+
+
+  <!-- modal add -->
+  <div id="homeModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p><b><i>RUTFORCE</i></b> <i> is a high engine oil,Good anti-corrosion,Anti-Rust,
+        Anti- Oxidation and Anti-wear properties. 
+       Excellent all weather performance due to improved cold weather properties.</i></p>
+      <p><b>WARNING :</b></p> <hr>
+      <i>Do not fill container with fuel / Solvent- Static could cause fire.</i>
+     <p>  <i>Keep out of reach of children.</i></p>
+    
+    </div>
+
+</div>
+<div id="aboutModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2> <m>A</m>bout Us</h2>
+        <div class="mp">
+            <img src="ru1.jpg" alt="">
+            <img src="ru2.jpg" alt="">
+            <img src="ru4.jpg" alt="">
+            <img src="ru5.jpg" alt="">
+            <img src="ru5.jpg" alt="">
+            <!-- <img src="ru5.jpg" alt=""> -->
+
+
+           
+
+            
+        </div>
+    </div>
+</div>
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2><m>R</m>utfore <m>O</m>IL</h2> <hr>
+        <b> 
+          <i>Bayad Vas, Bhimasar Rapar,Kutch</i>
+          <h5><i>Pincode:- 370160,Gujarat.</i></h5>
+        <h4>MO:<i>  8169798851</i></h4>
+        <h5> <i>Email:</i> Rutforce2024@gmail.com</h5>
+      </b>
+    </div>
+</div>
+
+
+
+
+ <!-- end -->
+<script src="js1.js"></script>
+
+<footer>
+  <p>&copysr; <m>R</m>utfore OIL</p>
+</footer>
+</body>
+</html>

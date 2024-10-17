@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Rotating Cube Website</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+
+  <style>
+
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(45deg, #f73636, #3f48ad); */
+  background-image: url('logo.jpg');
+  background-repeat: no-repeat;
+
+  width:75vh;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Cube Container */
+.cube-container {
+  perspective: 1000px;
+}
+
+.cube {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(-45deg);
+  animation: rotate 3s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 2px solid #000;
+}
+
+.front  { transform: translateZ(200px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.right  { transform: rotateY(90deg) translateZ(100px); }
+.top    { transform: rotateX(90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+@keyframes rotate {
+  from {
+    transform: rotateX(-30deg) rotateY(-45deg);
+  }
+  to {
+    transform: rotateX(-30deg) rotateY(315deg);
+  }
+}
+
+/* Follow Button */
+.follow-btn {
+  position: absolute;
+  bottom: 20px;
+  padding: 10px 20px;
+  background-color: #22df22;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: black;
+
+}
+
+.follow-btn:hover {
+  background-color: #29fade;
+  color: black;
+}
+
+    .face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the face without distortion */
+  border-radius: 5px;
+}
+
+  </style>
+</head>
+<body>
+       <div class="cube-container">
+    <div class="cube">
+      <div class="face front">
+        <img src="ru5.jpg" alt="Front Face">
+      </div> 
+      <div class="face back">
+        <img src="ru2.jpg" alt="Back Face">
+      </div>
+      <div class="face left">
+        <img src="ru4.jpg" alt="Left Face">
+      </div>
+      <div class="face right">
+        <img src="ru8.jpg" alt="Right Face">
+      </div>
+      <div class="face top">
+        <img src="ru10.jpg" alt="Top Face">
+      </div>
+      <div class="face bottom">
+        <img src="ru6.jpg" alt="Bottom Face">
+      </div>
+    </div>
+  </div>
+
+  <button class="follow-btn" onclick="toggleFollow()"> 💙 Follow 💙</button>
+  
+
+  <script>
+
+let isFollowing = false;
+
+function toggleFollow() {
+  const button = document.querySelector('.follow-btn');
+  isFollowing = !isFollowing;
+  button.textContent = isFollowing ? '❤️ Following ❤️' : '💙 Follow ❤️';
+}
+
+  </script>
+
+  
+</body>
+</html>

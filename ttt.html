@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Image Design</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    perspective: 1000px;
+}
+
+.image-box {
+    width: 300px;
+    height: 400px;
+    transition: transform 1s ease;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+  /* display: flex; */
+margin-top: 19px;
+
+ 
+
+
+}
+
+.image-box:hover {
+    transform: rotateY(180deg);
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* position: line; */
+    /* cursor: pointer;
+  display: flex; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+/* margin-top: 12px; */
+border: 2px solid black;
+
+
+
+}
+.section img{
+    width: 83%;
+    height: 20%;
+
+}
+
+     </style>
+</head>
+<body>
+
+    <div class="section">
+        <img src="logo.jpg" alt="">
+    </div>
+    <div class="container">
+        <div class="image-box">
+            <img src="rutt2.jpg" alt="3D Image">
+            
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image-box">
+            <img src="ru2.jpg" alt="3D Image">
+            
+
+        </div>
+    </div> <div class="container">
+        <div class="image-box">
+            <img src="ru3.jpg" alt="3D Image">
+            
+
+        </div>
+    </div>
+</div> <div class="container">
+    <div class="image-box">
+        <img src="ru4.jpg" alt="3D Image">
+        
+
+    </div>
+</div>
+
+</div> <div class="container">
+    <div class="image-box">
+        <img src="ru5.jpg" alt="3D Image">
+        
+
+    </div>
+</div>
+</div> <div class="container">
+    <div class="image-box">
+        <img src="ru6.jpg" alt="3D Image">
+        
+
+    </div>
+</div>
+</div> <div class="container">
+    <div class="image-box">
+        <img src="ru1.jpg" alt="3D Image">
+        
+
+    </div>
+</div>
+
+    <script >
+
+const card = document.querySelector('.card');
+
+card.addEventListener('mousemove', (e) => {
+  const rect = card.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const xRot = ((y / rect.height) - 0.5) * 30; // Rotate on the X-axis
+  const yRot = ((x / rect.width) - 0.5) * -30; // Rotate on the Y-axis
+
+  card.style.transform = `rotateX(${xRot}deg) rotateY(${yRot}deg)`;
+});
+
+card.addEventListener('mouseleave', () => {
+  card.style.transform = 'rotateX(0) rotateY(0)';
+});
+
+
+    </script>
+</body>
+</html>
